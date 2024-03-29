@@ -1,4 +1,5 @@
-const choices = document.querySelectorAll(".choice");
+const playerChoice = document.querySelectorAll(".playerChoice");
+const compChoice = document.querySelectorAll(".compChoice");
 let msgContainer = document.querySelector('.msg-container');
 let msg = document.querySelector('.msg');
 let userScores = document.querySelector("#user-score");
@@ -31,6 +32,13 @@ const getCompChoice = () => {
     const options = ['Rock', 'Paper', 'Scissor'];
 
     let randomIdx = Math.floor(Math.random() * 3);
+    compChoice.forEach((choice) => {
+        if (choice.id === options[randomIdx]) {
+            choice.classList.add('select');
+        } else {
+            choice.classList.remove('select');
+        }
+    })
 
     return options[randomIdx];
 }
@@ -40,7 +48,6 @@ const drawGame = () => {
     drawScore++;
     drawScores.innerText = drawScore;
     msg.style.backgroundColor = '#081b31';
-    console.log(drawScores);
 }
 
 const getWinner = (userChoice) => {
@@ -61,12 +68,11 @@ const getWinner = (userChoice) => {
 
         showWinner(userChoice, compChoice);
     }
-    console.log(userChoice, compChoice);
 }
 
 
 
-choices.forEach((choice) => {
+playerChoice.forEach((choice) => {
     choice.addEventListener('click', () => {
         getWinner(choice.getAttribute('id'));
     })
