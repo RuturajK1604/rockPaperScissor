@@ -71,8 +71,8 @@ img {
   align-items: center;
   font-size: 1.5rem;
   margin-top: 2rem;
-  gap: 5rem;
-  padding-left: 7rem;
+  gap: 9rem;
+  margin-left: 9rem;
 }
 
 #user-score,
@@ -83,7 +83,7 @@ img {
 
 .msg-container {
   margin-top: 2.5rem;
-  margin-left: 6rem;
+  margin-left: 8.5rem;
 }
 
 .msg {
@@ -92,7 +92,7 @@ img {
   height: 40rem;
   font-size: 1.5rem;
   display: inline;
-  padding: 0.6rem;
+  padding: 1rem;
   border-radius: 1rem;
 }
 
